@@ -1,0 +1,54 @@
+.weather{
+    position: absolute;
+    right: 300px;
+    top: 50px;
+    background: #b1bcc5;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    /*background: rgba(10, 10, 10, .65);*/
+    box-shadow: 0 8px 32px rgb(157, 163, 183);
+    border-right: 2px solid rgba(255, 255, 255, .09);
+    transition: .4s ease-in-out;
+
+}
+.icon{
+    width: 45%;
+    float: left;
+}
+.weather-right{
+    width: 50%;
+    float: right;
+}
+.temp p{
+    float: left;
+    font-size: 40px;
+    color: white;
+}
+.temp p:nth-child(1){
+    margin-right: 10px;
+    font-size: 100px;
+    height: 50px;
+    margin: 10px;
+    margin-top: 60px;
+}
+.temp p:nth-child(2){
+    font-size: 40px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.temp{
+    width: 100%;
+    height: 180px;
+}
+.status{
+    width: 100%;
+    font-size: 30px;
+    color: #f3e7c3;
+    float: left;
+    margin-left: 10px;
+}

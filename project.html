@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="main" ontouchstart="toucuPlayColor(event)" onclick="playColor(event)">
+	<div class="navbar" >
+		<a href="./index.html">Home</a>
+		<div class="dropdown">
+			<div class="dropdown-content">
+				<a href="project.html">Projects</a>
+				<a href="reading.html">Readings</a>
+			</div>
+		</div>
+	</div>
+	<div class="lanren">
+		<div class="flip-3d">
+			
+			<a href="https://acceberh.github.io/week1/">
+				<figcaption>Hypertext narrative</figcaption>
+			</a>
+		</div>
+		<div class="flip-3d">
+			<a href="https://acceberh.github.io/Project2/"><figcaption>Manifesto</figcaption></a>
+				
+		</div>
+		<div class="flip-3d">
+			<a href="https://acceberh.github.io/proj3/"><figcaption>How to</figcaption></a>
+				
+		</div>
+		<div class="flip-3d">
+			<a href="https://acceberh.github.io/personal/"><figcaption>Personal Homepage</figcaption></a>
+				
+		</div>
+		<div class="flip-3d">
+			<a href="https://acceberh.github.io/project5/"><figcaption>A Surprising Interface</figcaption></a>
+		</div>
+		<div class="flip-3d">
+				<figcaption>Open Brief</figcaption>
+		</div>
+	</div>
+	<div class="cursor"></div>
+</div>
+</body>
+<script src="color.js"></script>
+<script>
+	function playColor(e){
+		console.log(e)
+		var color = new colorBall()
+		color.fly(e.clientX, e.clientY)
+	}
+	function toucuPlayColor(e) {
+		var color = new colorBall()
+		color.fly(e.changedTouches[0].clientX,e.changedTouches[0].clientY);
+		e.stopPropagation()
+		e.preventDefault()
+	}
+</script>
+</html>

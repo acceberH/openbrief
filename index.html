@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca's C</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weather.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+<div style="width: 100%; margin: auto;">
+    <canvas id="myChart" height="50"></canvas>
+</div>
+    <div class="navbar">
+        <div class="dropdown">
+            <a href="work.html">Work</a>
+            <div class="dropdown-content">
+                <a href="./index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="reading.html">Readings</a>
+            </div>
+        </div> 
+        
+    </div>
+    <div class="weather">
+        <img src="./icon_weather/1.png" id="icon" class="icon">
+        <div class="weather-right">
+            <div class="temp"><p id="temperature">xxx</p><p>°C</p></div>
+            <div id="status" class="status">xxx</div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1 class="title">"Shhhh"</h1>
+        <h2 class="rebecca-description"> 
+            Hi there! My name is Qiongran Huang. It's not Chi(squared)iongran or Kiongran. Rebecca is just "fake" a name I chose for starbucks pickup or take attendance. 
+        </h2>
+        <div class="face">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cursor"></div>
+
+
+
+
+    
+</body>
+<script>
+    document.querySelector('body').addEventListener('mousemove', eyeball)
+    function eyeball(){
+        let eyes = document.querySelectorAll('.eye')
+        eyes.forEach(eye=>{
+            let x = (eye.getBoundingClientRect().left) +(eye.clientWidth/2)
+            let y = (eye.getBoundingClientRect().top) +(eye.clientHeight/2)
+            let radian = Math.atan2(event.pageX - x, event.pageY - y)
+            let rot = (radian*(180/Math.PI)* -1) + 270
+            eye.style.transform = `rotate(${rot}deg)`
+        })
+    }
+</script>
+<script type="text/javascript" src="./weather.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    start()
+</script>
+</html>
+
